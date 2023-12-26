@@ -33,6 +33,11 @@ private let logger = Logger(subsystem: "Quotebook Data", category: "Quote")
         }
     }
     
+    public var formattedDate: String {
+        timestamp.formatted(date: .long, time: .omitted)
+//        timestamp.formatted(date: .abbreviated, time: .shortened)
+    }
+    
     public init(id: UUID = UUID(), content: String, timestamp: Date, notes: String? = nil, source: String? = nil, isFavorite: Bool) {
         self.id = id.uuidString
         self.content = content
